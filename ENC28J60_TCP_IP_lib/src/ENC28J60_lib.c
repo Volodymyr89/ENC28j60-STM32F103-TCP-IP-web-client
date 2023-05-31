@@ -102,3 +102,26 @@ void enc28j60Init( uint8_t* macaddr ) {
 	enc28j60PhyWrite(PHLCON,0x3476);
 	HAL_Delay(100);
 }
+
+uint8_t enc28j60ReadOp(uint8_t op, uint8_t address)
+{
+		uint8_t temp;
+        enableChip;
+        // issue read command
+        ENC28J60_SendByte(op | (address & ADDR_MASK));
+        temp = ENC28J60_SendByte(0xFF);
+        if (address & 0x80)
+            temp = ENC28J60_SendByte(0xFF);
+
+        // release CS
+        disableChip;
+        return temp;
+}
+
+void enc28j60WriteOp(uint8_t op, uint8_t address, uint8_t data)
+{
+    enableChip;
+    ENC28J60_SendByte(op | (address & ADDR_MASK));
+    ENC28J60_SendByte(data);
+    disableChip;
+}
