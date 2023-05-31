@@ -134,6 +134,14 @@ uint8_t enc28j60ReadOp(uint8_t op, uint8_t address)
         disableChip;
        
 }
+// write data to address
+void enc28j60Write(uint8_t address, uint8_t data)
+{
+        // set the bank
+        enc28j60SetBank(address);
+        // do the write
+        enc28j60WriteOp(ENC28J60_WRITE_CTRL_REG, address, data);
+}
 // write op code
 void enc28j60WriteOp(uint8_t op, uint8_t address, uint8_t data)
 {

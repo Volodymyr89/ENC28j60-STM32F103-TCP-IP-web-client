@@ -238,6 +238,7 @@
 void enc28j60Init( uint8_t* macaddr );
 void enc28j60Init( uint8_t* macaddr );
 void enc28j60WriteWord(uint8_t address, uint16_t data);
+void enc28j60Write(uint8_t address, uint8_t data);
 void enc28j60WriteOp(uint8_t op, uint8_t address, uint8_t data);
 uint8_t enc28j60ReadOp(uint8_t op, uint8_t address);
 uint8_t enc28j60Read(uint8_t address);
