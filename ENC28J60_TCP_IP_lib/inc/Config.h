@@ -9,6 +9,6 @@
 
 // set ENC28J60 macaddr
 uint8_t mymacaddr[6]={0,0,0,0,0,0};
-
+uint8_t myip[4]={0,0,0,0};
 
 #endif

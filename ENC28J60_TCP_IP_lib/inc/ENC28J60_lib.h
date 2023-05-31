@@ -10,6 +10,10 @@
 	# Error! Please define PIN to disable ENC28J60!
 #endif
 
+#ifndef WWWPORT
+	# Error! Please define port!
+#endif
+
 // ENC28J60 Control Registers
 // Control register definitions are a combination of address,
 // bank number, and Ethernet/MAC/PHY indicator bits.
