@@ -2,6 +2,8 @@
 #include "Config.h"
 #include "ENC28J60_lib.h"
 
+// set timeout
+#define TIMEOUT 0xffffffff
 
 void enc28j60Init( uint8_t* macaddr )
 {
@@ -168,4 +170,36 @@ uint8_t enc28j60getrev(void)
         // there is no B8 out yet
         if (rev>5) rev++;
 	return(rev);
+}
+
+// send one byte and receive one back
+unsigned char ENC28J60_SendByte(uint8_t tx)
+{
+	if (hspi == NULL)
+		return 0;
+//	while(SPI_I2S_GetFlagStatus(hspi->Instance, SPI_I2S_FLAG_TXE) == RESET);
+//	SPI_WaitFlagStateUntilTimeout(hspi, SPI_FLAG_TXE, RESET, 0xffffffff);
+
+/*
+	//SPI_I2S_SendData(hspi->Instance, dt);
+	int r;
+	r = HAL_SPI_Transmit(hspi, &dt, 1, 0xffffffff);
+
+	if (r != HAL_OK)
+		error(r, 0);
+	//while(SPI_I2S_GetFlagStatus(hspi->Instance, SPI_I2S_FLAG_RXNE) == RESET);
+//	SPI_WaitFlagStateUntilTimeout(hspi, SPI_FLAG_RXNE, RESET, 0xffffffff);
+    
+	//return SPI_I2S_ReceiveData(hspi->Instance);
+	r = HAL_SPI_Receive(hspi, &dt, 1, 0xffffffff);
+
+	if (r != HAL_OK)
+		error(r, 0);
+*/
+	uint8_t rx = 0;
+
+	if (HAL_SPI_TransmitReceive(hspi, &tx, &rx, 1, TIMEOUT) != HAL_OK)
+		Error_Handler();
+
+	return rx;
 }
