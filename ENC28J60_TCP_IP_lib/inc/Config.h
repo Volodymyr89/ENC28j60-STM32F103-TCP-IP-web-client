@@ -4,8 +4,9 @@
 #include <stdint.h>
 
 // define PINs to enble/disable ENC28J60 chip
-#define enableChip
-#define disableChip
+#define ENABLECHIP
+#define DISABLECHIP
+#define WWWPORT      80
 
 // set ENC28J60 macaddr
 uint8_t mymacaddr[6]={0,0,0,0,0,0};

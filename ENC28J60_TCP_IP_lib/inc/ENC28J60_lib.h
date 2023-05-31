@@ -2,14 +2,14 @@
 #define _ENC28J60_H
 
 // if not defined enable pin throw error
-#ifndef enableChip
+#ifndef ENABLECHIP
 	# Error! Please define PIN to enable ENC28J60!
 #endif
 // if not defined disable pin throw error
-#ifndef disableChip
+#ifndef DISABLECHIP
 	# Error! Please define PIN to disable ENC28J60!
 #endif
-
+// if not defined port throw error
 #ifndef WWWPORT
 	# Error! Please define port!
 #endif
@@ -232,10 +232,16 @@
 #define ENC28J60_BIT_FIELD_SET       0x80
 #define ENC28J60_BIT_FIELD_CLR       0xA0
 #define ENC28J60_SOFT_RESET          0xFF
-
+// ENC28J60 Control Registers End
 	
-//fuctions prototypes	
+//Fuctions Pototypes	
 void enc28j60Init( uint8_t* macaddr );
-void enc28j60Init( uint8_t* macaddr );	
+void enc28j60Init( uint8_t* macaddr );
+void enc28j60WriteWord(uint8_t address, uint16_t data);
+void enc28j60WriteOp(uint8_t op, uint8_t address, uint8_t data);
+uint8_t enc28j60ReadOp(uint8_t op, uint8_t address);
+uint8_t enc28j60Read(uint8_t address);
+uint8_t enc28j60getrev(void);
 
+//Fuctions Prototypes End
 #endif

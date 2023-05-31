@@ -1,9 +1,11 @@
 #include <stdint.h>
 #include "Config.h"
+#include "ENC28J60_lib.h"
+
 
 void enc28j60Init( uint8_t* macaddr )
 {
-	enableChip; // ss=0
+	ENABLECHIP; // ss=0
 
 	// perform system reset
 	enc28j60WriteOp(ENC28J60_SOFT_RESET, 0, ENC28J60_SOFT_RESET);
@@ -77,7 +79,6 @@ void enc28j60Init( uint8_t* macaddr )
 	// enable packet reception
 	enc28j60WriteOp(ENC28J60_BIT_FIELD_SET, ECON1, ECON1_RXEN);
 }
-
 void enc28j60Init( uint8_t* macaddr ) {
 	
   /*initialize enc28j60*/
@@ -102,7 +103,6 @@ void enc28j60Init( uint8_t* macaddr ) {
 	enc28j60PhyWrite(PHLCON,0x3476);
 	HAL_Delay(100);
 }
-
 uint8_t enc28j60ReadOp(uint8_t op, uint8_t address)
 {
 		uint8_t temp;
@@ -117,11 +117,55 @@ uint8_t enc28j60ReadOp(uint8_t op, uint8_t address)
         disableChip;
         return temp;
 }
+// read Opcode
+uint8_t enc28j60ReadOp(uint8_t op, uint8_t address)
+{
+		uint8_t temp;
+        enableChip;
+        // issue read command
+        ENC28J60_SendByte(op | (address & ADDR_MASK));
+        temp = ENC28J60_SendByte(0xFF);
+        if (address & 0x80)
+            temp = ENC28J60_SendByte(0xFF);
 
+        // release CS
+        disableChip;
+       
+}
+// write op code
 void enc28j60WriteOp(uint8_t op, uint8_t address, uint8_t data)
 {
     enableChip;
     ENC28J60_SendByte(op | (address & ADDR_MASK));
     ENC28J60_SendByte(data);
     disableChip;
+}
+// read from ENC
+uint8_t enc28j60Read(uint8_t address)
+{
+        // set the bank
+        enc28j60SetBank(address);
+        // do the read
+        return enc28j60ReadOp(ENC28J60_READ_CTRL_REG, address);
+}
+
+
+
+//write word
+void enc28j60WriteWord(uint8_t address, uint16_t data) {
+    enc28j60Write(address, data & 0xff);
+    enc28j60Write(address + 1, data >> 8);
+}
+
+// read the revision of the chip:
+uint8_t enc28j60getrev(void)
+{
+        uint8_t rev;
+        rev=enc28j60Read(EREVID);
+        // microchip forgot to step the number on the silcon when they
+        // released the revision B7. 6 is now rev B7. We still have
+        // to see what they do when they release B8. At the moment
+        // there is no B8 out yet
+        if (rev>5) rev++;
+	return(rev);
 }
