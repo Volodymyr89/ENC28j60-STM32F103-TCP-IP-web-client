@@ -1,0 +1,18 @@
+!SESSION 2023-07-14 11:18:14.087 -----------------------------------------------
+eclipse.buildId=Version 1.13.0
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-07-14 11:18:57.574
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-07-14 11:18:57.584
+!MESSAGE Log4j2 initialized with config file D:\C\STM32\ENC28j60-STM32F103-TCP-IP-web-client\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-07-14 11:19:01.319
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-07-14 12:42:00.572
+!MESSAGE Indexed 'ENC28j60_STM32F103_TCP_IP_web_client' (18 sources, 79 headers) in 2.66 sec: 4,065 declarations; 17,722 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0092%)
