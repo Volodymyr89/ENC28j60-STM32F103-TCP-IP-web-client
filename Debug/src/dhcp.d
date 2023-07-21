@@ -23,8 +23,9 @@ src/dhcp.o: D:/C/STM32/Ethernet/src/dhcp.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
- D:/C/STM32/Ethernet/inc/ip_config.h D:/C/STM32/Ethernet/inc/net.h \
- D:/C/STM32/Ethernet/inc/dhcp.h D:/C/STM32/Ethernet/inc/ip_arp_udp_tcp.h
+ D:/C/STM32/Ethernet/inc/Config.h D:/C/STM32/Ethernet/inc/ip_config.h \
+ D:/C/STM32/Ethernet/inc/net.h D:/C/STM32/Ethernet/inc/dhcp.h \
+ D:/C/STM32/Ethernet/inc/ip_arp_udp_tcp.h
 D:/C/STM32/Ethernet/inc/enc28j60.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -49,6 +50,7 @@ D:/C/STM32/Ethernet/inc/enc28j60.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
+D:/C/STM32/Ethernet/inc/Config.h:
 D:/C/STM32/Ethernet/inc/ip_config.h:
 D:/C/STM32/Ethernet/inc/net.h:
 D:/C/STM32/Ethernet/inc/dhcp.h:

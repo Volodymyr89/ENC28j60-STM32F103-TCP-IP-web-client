@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "Config.h"
+#include "EtherShield.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +44,8 @@
 SPI_HandleTypeDef hspi1;
 
 /* USER CODE BEGIN PV */
-
+uint8_t mymacaddr[6]={0,0,0,0,0,0};
+uint8_t myip[4]={0,0,0,0};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,7 +68,8 @@ static void MX_SPI1_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	ES_enc28j60SpiInit(&hspi1);
+	ES_enc28j60Init(mymacaddr);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

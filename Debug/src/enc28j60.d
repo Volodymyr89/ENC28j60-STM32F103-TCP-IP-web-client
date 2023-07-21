@@ -23,7 +23,7 @@ src/enc28j60.o: D:/C/STM32/Ethernet/src/enc28j60.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
- D:/C/STM32/Ethernet/inc/Config.h
+ D:/C/STM32/Ethernet/inc/Config.h D:/C/STM32/Ethernet/inc/Config.h
 D:/C/STM32/Ethernet/inc/enc28j60.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -48,4 +48,5 @@ D:/C/STM32/Ethernet/inc/enc28j60.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
+D:/C/STM32/Ethernet/inc/Config.h:
 D:/C/STM32/Ethernet/inc/Config.h:

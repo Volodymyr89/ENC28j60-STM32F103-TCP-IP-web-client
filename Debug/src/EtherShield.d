@@ -23,6 +23,7 @@ src/EtherShield.o: D:/C/STM32/Ethernet/src/EtherShield.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
+ D:/C/STM32/Ethernet/inc/Config.h \
  D:/C/STM32/Ethernet/inc/ip_arp_udp_tcp.h \
  D:/C/STM32/Ethernet/inc/websrv_help_functions.h \
  D:/C/STM32/Ethernet/inc/dnslkup.h D:/C/STM32/Ethernet/inc/dhcp.h \
@@ -54,6 +55,7 @@ D:/C/STM32/Ethernet/inc/enc28j60.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
+D:/C/STM32/Ethernet/inc/Config.h:
 D:/C/STM32/Ethernet/inc/ip_arp_udp_tcp.h:
 D:/C/STM32/Ethernet/inc/websrv_help_functions.h:
 D:/C/STM32/Ethernet/inc/dnslkup.h:
