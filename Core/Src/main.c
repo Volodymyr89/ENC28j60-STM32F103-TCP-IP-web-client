@@ -70,6 +70,9 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	ES_enc28j60SpiInit(&hspi1);
 	ES_enc28j60Init(mymacaddr);
+
+
+	ES_init_ip_arp_udp_tcp(mymacaddr,myip,WWWPORT);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -199,7 +202,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : CS_Pin */
   GPIO_InitStruct.Pin = CS_Pin;
