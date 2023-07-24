@@ -1,3 +1,4 @@
+D:/C/STM32/Ethernet/src/enc28j60.c:88:6:enc28j60_set_spi	16	static
 D:/C/STM32/Ethernet/src/enc28j60.c:94:15:ENC28J60_SendByte	32	static
 D:/C/STM32/Ethernet/src/enc28j60.c:129:9:enc28j60ReadOp	24	static
 D:/C/STM32/Ethernet/src/enc28j60.c:144:6:enc28j60WriteOp	16	static
